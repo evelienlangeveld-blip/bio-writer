@@ -14,9 +14,9 @@ export default async function handler(req, res) {
 Using the answers provided below, write a brilliant Instagram bio for this person. Follow these rules exactly:
 
 BIO STRUCTURE (in this order):
-1. NAME FIELD LINE: Write their name/username PLUS searchable keywords based on their niche and what their audience desires. Use real search terms people actually type — NOT job titles. For local businesses include location. Keep it natural. Format: [Name] - [searchable keywords] OR just [searchable keywords] if no personal brand name needed.
+1. NAME FIELD LINE: Write their name/username PLUS searchable keywords based on what their TARGET AUDIENCE would actually type into Instagram search. Think like a searcher — what words would someone type when looking for this type of account? NOT a description of the audience, NOT a job title. Examples of good searchable keywords: "how to grow on Instagram", "easy vegan recipes", "things to do in Sydney", "wedding photographer Melbourne". Format: [Name] - [searchable keywords]
 
-2. FIRST LINE: The most important line. Must make their perfect fit follower think "omg this is literally me." About the FOLLOWER, not the creator. Specific, not vague. Has personality — avoids boring "I help X do Y" phrasing where possible. Should filter IN the right people and filter OUT the wrong ones.
+2. FIRST LINE: The most important line. Must make their perfect fit follower think "omg this is literally me." Must be written FROM THE FOLLOWER'S PERSPECTIVE — about their situation, desire, or struggle. NEVER written as if the creator is speaking about themselves. Specific, not vague. Has personality — avoids boring "I help X do Y" phrasing. Should filter IN the right people and filter OUT the wrong ones. Example of BAD first line: "Done feeling invisible on Instagram? Same." (sounds like the creator is invisible). Example of GOOD first line: "For the female entrepreneur who is done being Instagram's best-kept secret" (speaks directly to the follower's situation).
 
 3. CREDIBILITY LINE: One line building trust. Use what they gave you. If they are a content creator or lifestyle account with no traditional credibility, skip this and use the line to describe more of what people can expect from the account instead.
 
