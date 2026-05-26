@@ -15,38 +15,35 @@ HERE IS WHAT TO WRITE:
 
 LINE 1 - NAME FIELD:
 Write: [Their name] - [searchable keywords]
-The keywords must be what their TARGET AUDIENCE would actually TYPE into Instagram search.
-Think like a searcher: "how to grow on Instagram", "vegan recipes easy", "wedding cakes Sydney", "things to do in Sydney" — these are search terms.
-NOT: "Instagram expert", "female entrepreneur coach", "lifestyle curator" — these are titles nobody searches.
-Keep it short and natural. One dash separator maximum.
+CRITICAL: The keywords must be what their TARGET AUDIENCE actually TYPES into the Instagram search bar. Ask yourself: what would someone type into Instagram search when looking for this type of account?
+GOOD examples: "how to grow on Instagram", "Instagram tips for business owners", "vegan dinner recipes", "wedding cakes Somerset", "things to do in Sydney"
+BAD examples: "Instagram growth for female entrepreneurs", "female entrepreneur coach", "lifestyle curator" - these are descriptions, not search terms. Nobody types these into search.
+Keep it short. One dash separator maximum.
 
 LINE 2 - FIRST LINE:
-Take their draft first line and sharpen it. Keep their voice and idea but make it:
-- More specific to their perfect fit follower
-- About the FOLLOWER's situation, desire or struggle — never about the creator
-- Have personality — not a generic "I help X do Y" statement
-- Make the right person think "omg this is literally me"
-Do NOT completely rewrite it. Sharpen what they gave you. If their draft is already good, keep it close to the original.
+Take their draft first line and sharpen it. Keep their voice and idea but make it speak directly to the FOLLOWER's situation, desire or struggle. Never about the creator. Specific enough that the right person thinks "omg this is literally me". Has personality.
+Do NOT completely rewrite it if their draft is already good. Just sharpen it.
 
 LINE 3 - CREDIBILITY:
-One short line using what they provided. Numbers are powerful. Keep it punchy.
-If no credibility provided, skip this line entirely.
+One punchy line using their credibility. Numbers are powerful. Skip entirely if no credibility was provided.
 
 LINE 4 - CTA:
-Write ONE outcome-driven CTA based on what they told you. Tell people what they will GET or what will HAPPEN. Not just a product name. Keep it short — one line maximum.
+One outcome-driven CTA. Tell people what they will GET or what will HAPPEN. Not a product name. One line only.
+If email for collabs: write "collabs: [email]"
+If no CTA needed: skip this line.
 
 LINE 5 - LINK:
-Just the URL they provided. Nothing else.
+Just the URL. Nothing else.
 
 FORMATTING RULES:
-- Use 1-2 emojis maximum, placed at the start of lines to break up text
-- Line breaks between each element
-- Under 150 characters for lines 2-5 combined (name field is separate)
-- Simple language, no jargon
-- No hashtags
-- Output ONLY the bio. No explanation, no commentary, no intro text.
+- EVERY line must start with a relevant emoji
+- Use a different emoji for each line
+- The CTA line must use 👇 or a downward pointing emoji
+- Line breaks between every element
+- Simple language, no jargon, no hashtags
+- Output ONLY the bio. No explanation, no intro, no commentary.
 
-STUDENT'S ANSWERS:
+STUDENT ANSWERS:
 ${answers}`;
 
   try {
