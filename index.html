@@ -62,6 +62,10 @@ h1{font-size:26px;font-weight:800;line-height:1.2;text-align:center;margin-botto
 .btn-retry{display:block;margin:16px auto 0;background:none !important;border:1.5px solid #e8e8e8;color:#aaa !important;border-radius:8px;padding:9px 20px;font-size:12px;font-weight:600;font-family:Montserrat,sans-serif;cursor:pointer;}
 .error{display:none;margin-top:14px;background:#fff5f5 !important;border:1px solid #fca5a5;border-radius:10px;padding:12px 16px;font-size:12px;font-weight:600;color:#dc2626 !important;text-align:center;}
 .error.show{display:block;}
+.bio-line{margin-bottom:14px;}
+.bio-line-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#ccc !important;margin-bottom:4px;}
+.bio-line-text{font-size:14px;font-weight:600;color:#444 !important;line-height:1.7;}
+.bio-line-text.skip{color:#ccc !important;font-style:italic;font-weight:400;}
 footer{text-align:center;margin-top:40px;font-size:11px;font-weight:600;color:#ddd !important;}
 footer a{color:#7B2FBE !important;text-decoration:none;}
 </style>
@@ -165,7 +169,7 @@ footer a{color:#7B2FBE !important;text-decoration:none;}
 <div class="result" id="resultEl">
   <div class="result-card">
     <div class="result-label">Your Brilliant Bio</div>
-    <div class="bio-output" id="bioOutput"></div>
+    <div id="bioOutput"></div>
     <button class="copy-btn" id="copyBtn">Copy bio</button>
   </div>
   <div class="tips-card">
@@ -177,11 +181,7 @@ footer a{color:#7B2FBE !important;text-decoration:none;}
       <li>Not happy? Hit regenerate and tweak your answers</li>
     </ul>
   </div>
-  <div class="cta-card">
-    <h3>Want to understand every element of your bio?</h3>
-    <p>Watch the Brilliant Bio Masterclass and learn exactly why each part works — so you can update it with confidence any time.</p>
-    <a href="http://evelongfield.com/bio" target="_blank" class="btn" style="display:flex;text-decoration:none">Get Brilliant Bio — The Masterclass for $37</a>
-  </div>
+
   <button class="btn-retry" id="retryBtn">↩ Regenerate with updated answers</button>
 </div>
 
@@ -256,7 +256,48 @@ function writeBio(){
   .then(function(data){
     var raw = (data.content||[]).map(function(b){ return b.text||''; }).join('');
     currentBio = raw.trim();
-    document.getElementById('bioOutput').textContent = currentBio;
+
+    // Parse labeled sections
+    var sections = [
+      {key: 'NAME FIELD', label: 'Name Field'},
+      {key: 'FIRST LINE', label: 'First Line'},
+      {key: 'CREDIBILITY', label: 'Credibility'},
+      {key: 'CTA', label: 'Call to Action'},
+      {key: 'LINK', label: 'Link in Bio'}
+    ];
+
+    var container = document.getElementById('bioOutput');
+    container.innerHTML = '';
+
+    var lines = currentBio.split('\n');
+    var current = null;
+    var sectionTexts = {};
+
+    lines.forEach(function(line) {
+      var trimmed = line.trim();
+      var matched = false;
+      sections.forEach(function(s) {
+        if(trimmed === s.key + ':' || trimmed === s.key) {
+          current = s.key;
+          matched = true;
+        }
+      });
+      if(!matched && current && trimmed && trimmed !== '---') {
+        sectionTexts[current] = (sectionTexts[current] || '') + trimmed;
+      }
+    });
+
+    sections.forEach(function(s) {
+      var text = sectionTexts[s.key] || '';
+      if(!text) return;
+      var isSkip = text.toLowerCase().indexOf('skip') >= 0;
+      var div = document.createElement('div');
+      div.className = 'bio-line';
+      div.innerHTML = '<div class="bio-line-label">' + s.label + '</div>' +
+        '<div class="bio-line-text' + (isSkip ? ' skip' : '') + '">' + text + '</div>';
+      container.appendChild(div);
+    });
+
     document.getElementById('loadingEl').classList.remove('show');
     document.getElementById('resultEl').classList.add('show');
   })
